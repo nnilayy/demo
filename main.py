@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, PlainTextResponse
 from datetime import datetime
 
 app = FastAPI()
@@ -34,3 +34,7 @@ async def tracking_pixel(request: Request):
 @app.get("/favicon.ico")
 def serve_favicon():
     return FileResponse("favicon.ico", media_type="image/x-icon")
+
+@app.get("/")
+def home():
+    return PlainTextResponse("✅ Tracking Pixel Server is running.\nVisit /pixel.png to test logging.")

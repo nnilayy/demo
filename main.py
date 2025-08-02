@@ -33,7 +33,7 @@ async def tracking_pixel(request: Request):
 
 @app.get("/favicon.ico")
 def serve_favicon():
-    return FileResponse("favicon.ico", media_type="image/x-icon")
+    return FileResponse("google-drive.ico", media_type="image/x-icon")
 
 @app.get("/")
 def home():
